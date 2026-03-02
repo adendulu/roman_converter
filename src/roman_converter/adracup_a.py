@@ -22,9 +22,12 @@ def to_roman(arabic: int) -> str:
     return result
 
 def from_roman(roman: str) -> int:
-    Map_integer = dict([
-        ("I", 1), ("V", 5), ("X",10),("L",50),("C",100),("D",500),("M",1000)
-    ])
+    # Map_integer = dict([
+    #     ("I", 1), ("V", 5), ("X",10),("L",50),("C",100),("D",500),("M",1000)
+    # ])
+    Map_integer: dict[str, int] = {
+        "I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000
+    }
     result = 0
     for i in range(len(roman)):
         current = Map_integer[roman[i]]
